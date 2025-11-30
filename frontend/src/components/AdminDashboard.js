@@ -120,6 +120,11 @@ const AdminDashboard = () => {
     });
   };
 
+  const removeSubject = (index) => {
+    const updatedSubjects = marksForm.subjects.filter((_, i) => i !== index);
+    setMarksForm({ ...marksForm, subjects: updatedSubjects });
+  };
+
   const updateSubject = (index, field, value) => {
     const updatedSubjects = marksForm.subjects.map((subject, i) => {
       if (i === index) {
@@ -292,7 +297,16 @@ const AdminDashboard = () => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
               <h2 style={{ fontSize: '24px', fontWeight: '600', color: '#e2e8f0' }}>Students Management</h2>
               <button
-                onClick={() => setShowForm(!showForm)}
+                onClick={() => {
+                  if (showForm) {
+                    setFormData({
+                      name: '', email: '', age: '', gender: 'Male', 
+                      department: '', semester: '', enrollmentNumber: '', address: ''
+                    });
+                    setUsnError('');
+                  }
+                  setShowForm(!showForm);
+                }}
                 className="btn btn-primary"
               >
                 {showForm ? 'Cancel' : 'Add Student'}
@@ -651,35 +665,71 @@ const AdminDashboard = () => {
                 <div style={{ marginBottom: '16px' }}>
                   <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '12px', color: '#e2e8f0' }}>Subjects</h4>
                   {marksForm.subjects.map((subject, index) => (
-                    <div key={index} className="grid grid-2" style={{ marginBottom: '12px', padding: '12px', border: '1px solid #475569', borderRadius: '8px', background: '#334155' }}>
-                      <input
-                        type="text"
-                        placeholder="Subject Name"
-                        className="form-input"
-                        value={subject.name}
-                        onChange={(e) => updateSubject(index, 'name', e.target.value)}
-                      />
-                      <input
-                        type="number"
-                        placeholder="Internal Marks"
-                        className="form-input"
-                        value={subject.internal}
-                        onChange={(e) => updateSubject(index, 'internal', e.target.value)}
-                      />
-                      <input
-                        type="number"
-                        placeholder="External Marks"
-                        className="form-input"
-                        value={subject.external}
-                        onChange={(e) => updateSubject(index, 'external', e.target.value)}
-                      />
-                      <input
-                        type="number"
-                        placeholder="Total Marks"
-                        className="form-input"
-                        value={subject.total}
-                        onChange={(e) => updateSubject(index, 'total', e.target.value)}
-                      />
+                    <div key={index} style={{ marginBottom: '12px', padding: '12px', border: '1px solid #475569', borderRadius: '8px', background: '#334155', position: 'relative' }}>
+                      {index > 0 && (
+                        <button
+                          type="button"
+                          onClick={() => removeSubject(index)}
+                          style={{
+                            position: 'absolute',
+                            top: '8px',
+                            right: '8px',
+                            background: 'transparent',
+                            border: 'none',
+                            color: '#ef4444',
+                            fontSize: '16px',
+                            fontWeight: 'bold',
+                            cursor: 'pointer',
+                            padding: '2px 6px',
+                            borderRadius: '4px',
+                            width: '24px',
+                            height: '24px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.target.style.background = '#fef2f2';
+                            e.target.style.color = '#dc2626';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.target.style.background = 'transparent';
+                            e.target.style.color = '#ef4444';
+                          }}
+                        >
+                          ×
+                        </button>
+                      )}
+                      <div className="grid grid-2">
+                        <input
+                          type="text"
+                          placeholder="Subject Name"
+                          className="form-input"
+                          value={subject.name}
+                          onChange={(e) => updateSubject(index, 'name', e.target.value)}
+                        />
+                        <input
+                          type="number"
+                                          placeholder="Internal Marks"
+                          className="form-input"
+                          value={subject.internal}
+                          onChange={(e) => updateSubject(index, 'internal', e.target.value)}
+                        />
+                        <input
+                          type="number"
+                          placeholder="External Marks"
+                          className="form-input"
+                          value={subject.external}
+                          onChange={(e) => updateSubject(index, 'external', e.target.value)}
+                        />
+                        <input
+                          type="number"
+                          placeholder="Total Marks"
+                          className="form-input"
+                          value={subject.total}
+                          onChange={(e) => updateSubject(index, 'total', e.target.value)}
+                        />
+                      </div>
                     </div>
                   ))}
                   <button
