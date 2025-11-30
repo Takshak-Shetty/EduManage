@@ -5,9 +5,9 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f8fafc' }}>
+    <div style={{ minHeight: '100vh', background: '#0f172a' }}>
       {/* Header */}
-      <header style={{ background: 'white', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)', padding: '16px 0' }}>
+      <header style={{ background: '#1e293b', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.3)', padding: '16px 0', borderBottom: '1px solid #334155' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <h1 style={{ fontSize: '24px', fontWeight: 'bold', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: 0 }}>
@@ -81,10 +81,10 @@ const Home = () => {
       <section style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h3 style={{ fontSize: '36px', fontWeight: 'bold', marginBottom: '16px', color: '#1e293b' }}>
+            <h3 style={{ fontSize: '36px', fontWeight: 'bold', marginBottom: '16px', color: '#e2e8f0' }}>
               Powerful Features
             </h3>
-            <p style={{ fontSize: '18px', color: '#64748b', maxWidth: '600px', margin: '0 auto' }}>
+            <p style={{ fontSize: '18px', color: '#94a3b8', maxWidth: '600px', margin: '0 auto' }}>
               Everything you need to manage student records efficiently and effectively.
             </p>
           </div>
@@ -119,10 +119,10 @@ const Home = () => {
                   Manage
                 </div>
               </div>
-              <h4 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '12px', color: '#1e293b' }}>
+              <h4 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '12px', color: '#e2e8f0' }}>
                 Student Management
               </h4>
-              <p style={{ color: '#64748b', lineHeight: 1.6 }}>
+              <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>
                 Comprehensive student profile management with enrollment tracking and personal information storage.
               </p>
             </div>
@@ -156,10 +156,10 @@ const Home = () => {
                   Grade
                 </div>
               </div>
-              <h4 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '12px', color: '#1e293b' }}>
+              <h4 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '12px', color: '#e2e8f0' }}>
                 Grade Management
               </h4>
-              <p style={{ color: '#64748b', lineHeight: 1.6 }}>
+              <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>
                 Efficient grade recording, calculation, and reporting with automated performance analytics.
               </p>
             </div>
@@ -193,10 +193,10 @@ const Home = () => {
                   Analyze
                 </div>
               </div>
-              <h4 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '12px', color: '#1e293b' }}>
+              <h4 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '12px', color: '#e2e8f0' }}>
                 Reports & Analytics
               </h4>
-              <p style={{ color: '#64748b', lineHeight: 1.6 }}>
+              <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>
                 Generate detailed reports and gain insights into student performance and academic trends.
               </p>
             </div>
@@ -205,26 +205,26 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section style={{ background: '#f1f5f9', padding: '60px 0' }}>
+      <section style={{ background: '#1e293b', padding: '60px 0' }}>
         <div className="container">
           <div className="grid grid-3" style={{ gap: '32px', textAlign: 'center' }}>
             <div>
               <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#667eea', marginBottom: '8px' }}>
                 99%
               </div>
-              <p style={{ color: '#64748b', fontSize: '16px' }}>System Uptime</p>
+              <p style={{ color: '#94a3b8', fontSize: '16px' }}>System Uptime</p>
             </div>
             <div>
               <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#667eea', marginBottom: '8px' }}>
                 24/7
               </div>
-              <p style={{ color: '#64748b', fontSize: '16px' }}>Support Available</p>
+              <p style={{ color: '#94a3b8', fontSize: '16px' }}>Support Available</p>
             </div>
             <div>
               <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#667eea', marginBottom: '8px' }}>
                 100%
               </div>
-              <p style={{ color: '#64748b', fontSize: '16px' }}>Data Security</p>
+              <p style={{ color: '#94a3b8', fontSize: '16px' }}>Data Security</p>
             </div>
           </div>
         </div>

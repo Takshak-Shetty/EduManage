@@ -26,12 +26,44 @@ router.post('/student/register', async (req, res) => {
   }
 });
 
+// Create Admin (temporary endpoint)
+router.post('/create-admin', async (req, res) => {
+  try {
+    const existingAdmin = await User.findOne({ role: 'admin' });
+    if (existingAdmin) {
+      return res.status(409).json({ success: false, message: 'Admin already exists' });
+    }
+
+    const admin = new User({
+      name: 'Admin User',
+      email: 'admin@example.com',
+      password: 'admin123',
+      role: 'admin'
+    });
+    await admin.save();
+
+    res.status(201).json({
+      success: true,
+      message: 'Admin created successfully',
+      data: { email: 'admin@example.com', password: 'admin123' }
+    });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+});
+
 // Login
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     
-    const user = await User.findOne({ email, active: true });
+    // Check MongoDB connection
+    const mongoose = require('mongoose');
+    if (mongoose.connection.readyState !== 1) {
+      return res.status(503).json({ success: false, message: 'Database connection unavailable' });
+    }
+    
+    const user = await User.findOne({ email }).maxTimeMS(5000);
     if (!user || !(await user.comparePassword(password))) {
       return res.status(401).json({ success: false, message: 'Invalid credentials' });
     }
@@ -52,6 +84,9 @@ router.post('/login', async (req, res) => {
       }
     });
   } catch (error) {
+    if (error.name === 'MongooseError' || error.name === 'MongoTimeoutError') {
+      return res.status(503).json({ success: false, message: 'Database timeout - please try again' });
+    }
     res.status(400).json({ success: false, message: error.message });
   }
 });

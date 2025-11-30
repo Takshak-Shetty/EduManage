@@ -35,7 +35,7 @@ const Register = () => {
           <h1 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             Student Registration
           </h1>
-          <p style={{ color: '#64748b', fontSize: '16px' }}>Create your student account</p>
+          <p style={{ color: '#94a3b8', fontSize: '16px' }}>Create your student account</p>
         </div>
         
         <form onSubmit={handleSubmit}>

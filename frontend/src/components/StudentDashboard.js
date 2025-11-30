@@ -76,7 +76,7 @@ const StudentDashboard = () => {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f8fafc' }}>
+    <div style={{ minHeight: '100vh', background: '#0f172a' }}>
       <nav className="nav">
         <div className="container">
           <div className="nav-content">
@@ -84,7 +84,7 @@ const StudentDashboard = () => {
               <h1 className="nav-title">Student Portal</h1>
             </div>
             <div className="nav-user">
-              <span style={{ color: '#64748b' }}>Welcome, <strong>{user.name}</strong></span>
+              <span style={{ color: '#cbd5e1' }}>Welcome, <strong>{user.name}</strong></span>
               <button onClick={logout} className="btn btn-danger">
                 Logout
               </button>
@@ -111,42 +111,42 @@ const StudentDashboard = () => {
 
         {activeTab === 'profile' && (
           <div className="card">
-            <h3 style={{ fontSize: '24px', fontWeight: '600', marginBottom: '24px' }}>Student Profile</h3>
+            <h3 style={{ fontSize: '24px', fontWeight: '600', marginBottom: '24px', color: '#e2e8f0' }}>Student Profile</h3>
             {loading ? (
               <div className="loading">Loading profile...</div>
             ) : profile ? (
               <div className="grid grid-2" style={{ gap: '24px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#64748b', marginBottom: '4px' }}>Full Name</label>
-                  <p style={{ fontSize: '16px', fontWeight: '500' }}>{profile.name}</p>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#94a3b8', marginBottom: '4px' }}>Full Name</label>
+                  <p style={{ fontSize: '16px', fontWeight: '500', color: '#e2e8f0' }}>{profile.name}</p>
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#64748b', marginBottom: '4px' }}>Email Address</label>
-                  <p style={{ fontSize: '16px' }}>{profile.email}</p>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#94a3b8', marginBottom: '4px' }}>Email Address</label>
+                  <p style={{ fontSize: '16px', color: '#cbd5e1' }}>{profile.email}</p>
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#64748b', marginBottom: '4px' }}>Enrollment Number</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#94a3b8', marginBottom: '4px' }}>Enrollment Number</label>
                   <p style={{ fontSize: '16px', fontWeight: '500', color: '#667eea' }}>{profile.enrollmentNumber}</p>
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#64748b', marginBottom: '4px' }}>Department</label>
-                  <p style={{ fontSize: '16px' }}>{profile.department}</p>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#94a3b8', marginBottom: '4px' }}>Department</label>
+                  <p style={{ fontSize: '16px', color: '#cbd5e1' }}>{profile.department}</p>
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#64748b', marginBottom: '4px' }}>Current Semester</label>
-                  <p style={{ fontSize: '16px' }}>{profile.semester}</p>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#94a3b8', marginBottom: '4px' }}>Current Semester</label>
+                  <p style={{ fontSize: '16px', color: '#cbd5e1' }}>{profile.semester}</p>
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#64748b', marginBottom: '4px' }}>Age</label>
-                  <p style={{ fontSize: '16px' }}>{profile.age} years</p>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#94a3b8', marginBottom: '4px' }}>Age</label>
+                  <p style={{ fontSize: '16px', color: '#cbd5e1' }}>{profile.age} years</p>
                 </div>
                 <div style={{ gridColumn: 'span 2' }}>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#64748b', marginBottom: '4px' }}>Address</label>
-                  <p style={{ fontSize: '16px' }}>{profile.address}</p>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#94a3b8', marginBottom: '4px' }}>Address</label>
+                  <p style={{ fontSize: '16px', color: '#cbd5e1' }}>{profile.address}</p>
                 </div>
               </div>
             ) : (
-              <div style={{ textAlign: 'center', padding: '40px', color: '#64748b' }}>No profile data found</div>
+              <div style={{ textAlign: 'center', padding: '40px', color: '#94a3b8' }}>No profile data found</div>
             )}
           </div>
         )}
@@ -154,7 +154,7 @@ const StudentDashboard = () => {
         {activeTab === 'scorecard' && (
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-              <h3 style={{ fontSize: '24px', fontWeight: '600', margin: 0 }}>Academic Scorecard</h3>
+              <h3 style={{ fontSize: '24px', fontWeight: '600', margin: 0, color: '#e2e8f0' }}>Academic Scorecard</h3>
               {scorecard && (
                 <button onClick={downloadPDF} className="btn btn-success">
                   Download PDF
@@ -181,7 +181,7 @@ const StudentDashboard = () => {
                 </div>
 
                 <div className="card">
-                  <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>Subject-wise Marks</h4>
+                  <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px', color: '#e2e8f0' }}>Subject-wise Marks</h4>
                   <table className="table">
                     <thead>
                       <tr>
@@ -208,8 +208,8 @@ const StudentDashboard = () => {
               <div className="card">
                 <div style={{ textAlign: 'center', padding: '40px' }}>
 
-                  <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px' }}>No Scorecard Available</h4>
-                  <p style={{ color: '#64748b' }}>Your marks haven't been uploaded yet. Please contact your administrator.</p>
+                  <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#e2e8f0' }}>No Scorecard Available</h4>
+                  <p style={{ color: '#94a3b8' }}>Your marks haven't been uploaded yet. Please contact your administrator.</p>
                 </div>
               </div>
             )}

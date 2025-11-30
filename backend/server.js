@@ -26,10 +26,22 @@ app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/student', studentRoutes);
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+// Connect to MongoDB Atlas
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 10000,
+      socketTimeoutMS: 45000,
+    });
+    console.log('MongoDB Atlas connected successfully');
+  } catch (error) {
+    console.error('MongoDB Atlas connection failed:', error.message);
+    console.error('Please check: 1) IP whitelist 2) Credentials 3) Network connection');
+    process.exit(1);
+  }
+};
+
+connectDB();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

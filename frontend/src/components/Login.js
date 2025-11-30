@@ -41,7 +41,7 @@ const Login = () => {
           <h1 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             EduManage
           </h1>
-          <p style={{ color: '#64748b', fontSize: '16px' }}>Student Record Management System</p>
+          <p style={{ color: '#94a3b8', fontSize: '16px' }}>Student Record Management System</p>
         </div>
         
         <form onSubmit={handleSubmit}>
