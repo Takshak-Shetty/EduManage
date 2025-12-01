@@ -1,9 +1,9 @@
 # EduManage - Student Record Management System
-
+<img src="https://emoji.gg/assets/emoji/9757-doc.png" width="25"/> EduManage – Institutional Administration & Student Lifecycle Management System
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-6+-green.svg)](https://www.mongodb.com/)
-
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A comprehensive **MERN stack** application for managing student records with role-based access control, featuring a modern dark-themed UI and robust authentication system.
 
@@ -55,7 +55,13 @@ A comprehensive **MERN stack** application for managing student records with rol
 
 3. **Environment Configuration**
    
-   Create a `.env` file in the backend directory with required environment variables.
+   Create a `.env` file in the backend directory:
+   ```env
+   PORT=3000
+   MONGODB_URI=mongodb://localhost:27017/student_records
+   JWT_SECRET=your_secure_jwt_secret_key
+   NODE_ENV=development
+   ```
 
 4. **Initialize Database**
    ```bash
@@ -165,6 +171,10 @@ EduManage/
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
