@@ -9,7 +9,7 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-6+-green.svg)](https://www.mongodb.com/)
 
 </div>
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
 A comprehensive **MERN stack** application for managing student records with role-based access control, featuring a modern dark-themed UI and robust authentication system.
 
