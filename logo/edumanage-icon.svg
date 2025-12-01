@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon Only: Shield with Book -->
+  <path d="M48 12C48 12 36.8 15.2 24 15.2C11.2 15.2 0 12 0 12V40C0 56 11.2 70.4 24 76.8C36.8 70.4 48 56 48 40V12Z" fill="#0EA5A4"/>
+  <rect x="12" y="24" width="24" height="3.2" fill="white" opacity="0.9"/>
+  <rect x="12" y="30.4" width="24" height="3.2" fill="white" opacity="0.9"/>
+  <rect x="12" y="36.8" width="16" height="3.2" fill="white" opacity="0.9"/>
+  <rect x="12" y="43.2" width="20" height="3.2" fill="white" opacity="0.9"/>
+  <circle cx="38.4" cy="28.8" r="2.4" fill="white" opacity="0.7"/>
+  <circle cx="38.4" cy="35.2" r="2.4" fill="white" opacity="0.7"/>
+  <circle cx="38.4" cy="41.6" r="2.4" fill="white" opacity="0.7"/>
+</svg>

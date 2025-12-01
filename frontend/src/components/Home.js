@@ -1,20 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../animations.css';
 
 const Home = () => {
   const navigate = useNavigate();
+  const [counters, setCounters] = useState({ uptime: 0, support: 0, security: 0 });
+  const statsRef = useRef(null);
+
+  const animateCounter = (start, end, duration, key) => {
+    const startTime = Date.now();
+    const timer = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const current = Math.floor(start + (end - start) * progress);
+      
+      setCounters(prev => ({ ...prev, [key]: current }));
+      
+      if (progress === 1) {
+        clearInterval(timer);
+      }
+    }, 16);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCounters({ uptime: 0, support: 0, security: 0 });
+          animateCounter(0, 99, 2000, 'uptime');
+          animateCounter(0, 24, 2000, 'support');
+          animateCounter(0, 100, 2000, 'security');
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div style={{ minHeight: '100vh', background: '#0f172a' }}>
       {/* Header */}
       <header style={{ background: '#1e293b', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.3)', padding: '16px 0', borderBottom: '1px solid #334155' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <h1 style={{ fontSize: '24px', fontWeight: 'bold', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: 0 }}>
-              EduManage
-            </h1>
+          <div style={{ display: 'flex', alignItems: 'center', animation: 'slideInLeft 0.8s ease-out' }}>
+            <img src="/edumanage-dark.svg" alt="EduManage" style={{ height: '40px', width: 'auto' }} />
           </div>
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ display: 'flex', gap: '12px', animation: 'slideInRight 0.8s ease-out' }}>
             <button onClick={() => navigate('/login')} className="btn btn-primary">
               Login
             </button>
@@ -26,17 +62,17 @@ const Home = () => {
       </header>
 
       {/* Hero Section */}
-      <section style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '80px 0' }}>
+      <section style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '80px 0', animation: 'fadeInUp 1s ease-out' }}>
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '60px' }}>
             <div>
-              <h2 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '24px', margin: '0 0 24px 0' }}>
+              <h2 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '24px', margin: '0 0 24px 0', animation: 'slideInLeft 1.2s ease-out' }}>
                 Student Record Management System
               </h2>
-              <p style={{ fontSize: '20px', marginBottom: '40px', opacity: 0.9, lineHeight: 1.6 }}>
+              <p style={{ fontSize: '20px', marginBottom: '40px', opacity: 0.9, lineHeight: 1.6, animation: 'slideInLeft 1.4s ease-out' }}>
                 Streamline academic administration with our comprehensive platform for managing student records, grades, and performance analytics.
               </p>
-              <div style={{ display: 'flex', gap: '16px' }}>
+              <div style={{ display: 'flex', gap: '16px', animation: 'slideInLeft 1.6s ease-out' }}>
                 <button 
                   onClick={() => navigate('/register')} 
                   style={{ background: 'white', color: '#667eea', padding: '16px 32px', border: 'none', borderRadius: '8px', fontSize: '16px', fontWeight: '600', cursor: 'pointer' }}
@@ -51,7 +87,7 @@ const Home = () => {
                 </button>
               </div>
             </div>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center', animation: 'slideInRight 1.2s ease-out' }}>
               <div style={{ position: 'relative', display: 'inline-block' }}>
                 <img 
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
@@ -89,7 +125,7 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-3" style={{ gap: '32px' }}>
+          <div className="grid grid-3" style={{ gap: '32px', animation: 'fadeInUp 1.5s ease-out' }}>
             <div className="card" style={{ textAlign: 'center', padding: '32px', cursor: 'pointer', transition: 'all 0.3s ease' }}
                  onMouseEnter={(e) => {
                    e.currentTarget.style.transform = 'translateY(-8px)';
@@ -205,24 +241,24 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section style={{ background: '#1e293b', padding: '60px 0' }}>
+      <section ref={statsRef} style={{ background: '#1e293b', padding: '60px 0' }}>
         <div className="container">
           <div className="grid grid-3" style={{ gap: '32px', textAlign: 'center' }}>
             <div>
               <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#667eea', marginBottom: '8px' }}>
-                99%
+                {counters.uptime}%
               </div>
               <p style={{ color: '#94a3b8', fontSize: '16px' }}>System Uptime</p>
             </div>
             <div>
               <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#667eea', marginBottom: '8px' }}>
-                24/7
+                {counters.support}/7
               </div>
               <p style={{ color: '#94a3b8', fontSize: '16px' }}>Support Available</p>
             </div>
             <div>
               <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#667eea', marginBottom: '8px' }}>
-                100%
+                {counters.security}%
               </div>
               <p style={{ color: '#94a3b8', fontSize: '16px' }}>Data Security</p>
             </div>

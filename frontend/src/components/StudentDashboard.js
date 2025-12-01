@@ -46,17 +46,25 @@ const StudentDashboard = () => {
   const downloadPDF = () => {
     const doc = new jsPDF();
     
-    doc.setFontSize(20);
-    doc.text('Academic Scorecard', 20, 20);
+    // Add NITTE Logo PNG
+    doc.addImage('/nitte-logo.png', 'PNG', 15, 10, 180, 30);
+    
+    // Academic Scorecard title
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(18);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Academic Scorecard', 105, 50, { align: 'center' });
     
     doc.setFontSize(12);
-    doc.text(`Student: ${profile?.name || user.name}`, 20, 35);
-    doc.text(`Enrollment: ${profile?.enrollmentNumber || 'N/A'}`, 20, 45);
-    doc.text(`Department: ${profile?.department || 'N/A'}`, 20, 55);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(0, 0, 0);
+    doc.text(`Student: ${profile?.name || user.name}`, 20, 60);
+    doc.text(`Enrollment: ${profile?.enrollmentNumber || 'N/A'}`, 20, 70);
+    doc.text(`Department: ${profile?.department || 'N/A'}`, 20, 80);
     
-    doc.text(`Percentage: ${scorecard.marks.percentage}%`, 120, 35);
-    doc.text(`Grade: ${scorecard.marks.grade}`, 120, 45);
-    doc.text(`Status: ${scorecard.marks.status.toUpperCase()}`, 120, 55);
+    doc.text(`Percentage: ${scorecard.marks.percentage}%`, 120, 60);
+    doc.text(`Grade: ${scorecard.marks.grade}`, 120, 70);
+    doc.text(`Status: ${scorecard.marks.status.toUpperCase()}`, 120, 80);
     
     const tableData = scorecard.marks.subjects.map(subject => [
       subject.name,
@@ -68,8 +76,17 @@ const StudentDashboard = () => {
     autoTable(doc, {
       head: [['Subject', 'Internal', 'External', 'Total']],
       body: tableData,
-      startY: 70,
-      theme: 'grid'
+      startY: 90,
+      theme: 'grid',
+      headStyles: {
+        fillColor: [39, 53, 165], // NITTE Blue
+        textColor: 255,
+        fontStyle: 'bold'
+      },
+      styles: {
+        fontSize: 10,
+        cellPadding: 5
+      }
     });
     
     doc.save(`${profile?.name || user.name}_Scorecard.pdf`);
@@ -80,8 +97,11 @@ const StudentDashboard = () => {
       <nav className="nav">
         <div className="container">
           <div className="nav-content">
-            <div>
-              <h1 className="nav-title">Student Portal</h1>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <img src="/edumanage-dark.svg" alt="EduManage" style={{ height: '36px', width: 'auto' }} />
+              <div style={{ marginLeft: '20px', paddingLeft: '20px', borderLeft: '1px solid #475569' }}>
+                <h1 className="nav-title" style={{ margin: 0, fontSize: '18px' }}>Student Portal</h1>
+              </div>
             </div>
             <div className="nav-user">
               <span style={{ color: '#cbd5e1' }}>Welcome, <strong>{user.name}</strong></span>

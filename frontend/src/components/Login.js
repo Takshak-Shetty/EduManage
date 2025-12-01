@@ -37,11 +37,9 @@ const Login = () => {
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', position: 'relative' }}>
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.1 }}></div>
       <div className="card" style={{ width: '100%', maxWidth: '400px', margin: '20px', position: 'relative', zIndex: 1, boxShadow: '0 25px 50px rgba(0,0,0,0.25)' }}>
-        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            EduManage
-          </h1>
-          <p style={{ color: '#94a3b8', fontSize: '16px' }}>Student Record Management System</p>
+        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+          <img src="/edumanage-dark.svg" alt="EduManage" style={{ height: '40px', width: 'auto', marginBottom: '12px' }} />
+          <p style={{ color: '#64748b', fontSize: '14px' }}>Student Record Management System</p>
         </div>
         
         <form onSubmit={handleSubmit}>

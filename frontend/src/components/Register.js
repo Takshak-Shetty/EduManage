@@ -31,11 +31,12 @@ const Register = () => {
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', position: 'relative' }}>
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.1 }}></div>
       <div className="card" style={{ width: '100%', maxWidth: '400px', margin: '20px', position: 'relative', zIndex: 1, boxShadow: '0 25px 50px rgba(0,0,0,0.25)' }}>
-        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '8px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+          <img src="/edumanage-dark.svg" alt="EduManage" style={{ height: '40px', width: 'auto', marginBottom: '12px' }} />
+          <h1 style={{ fontSize: '22px', fontWeight: 'bold', marginBottom: '6px', color: '#ffffff' }}>
             Student Registration
           </h1>
-          <p style={{ color: '#94a3b8', fontSize: '16px' }}>Create your student account</p>
+          <p style={{ color: '#e2e8f0', fontSize: '14px' }}>Create your student account</p>
         </div>
         
         <form onSubmit={handleSubmit}>

@@ -261,8 +261,11 @@ const AdminDashboard = () => {
       <nav className="nav">
         <div className="container">
           <div className="nav-content">
-            <div>
-              <h1 className="nav-title" style={{ color: '#e2e8f0' }}>Admin Dashboard</h1>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <img src="/edumanage-dark.svg" alt="EduManage" style={{ height: '36px', width: 'auto' }} />
+              <div style={{ marginLeft: '20px', paddingLeft: '20px', borderLeft: '1px solid #475569' }}>
+                <h1 className="nav-title" style={{ color: '#e2e8f0', margin: 0, fontSize: '18px' }}>Admin Dashboard</h1>
+              </div>
             </div>
             <div className="nav-user">
               <span style={{ color: '#cbd5e1' }}>Welcome, <strong>{user.name}</strong></span>

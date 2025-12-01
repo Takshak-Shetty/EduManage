@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark Mode Version -->
+  <g id="icon">
+    <path d="M24 6C24 6 18.4 7.6 12 7.6C5.6 7.6 0 6 0 6V20C0 28 5.6 35.2 12 38.4C18.4 35.2 24 28 24 20V6Z" fill="#0EA5A4"/>
+    <rect x="6" y="12" width="12" height="1.6" fill="white" opacity="0.9"/>
+    <rect x="6" y="15.2" width="12" height="1.6" fill="white" opacity="0.9"/>
+    <rect x="6" y="18.4" width="8" height="1.6" fill="white" opacity="0.9"/>
+    <rect x="6" y="21.6" width="10" height="1.6" fill="white" opacity="0.9"/>
+    <circle cx="19.2" cy="14.4" r="1.2" fill="white" opacity="0.7"/>
+    <circle cx="19.2" cy="17.6" r="1.2" fill="white" opacity="0.7"/>
+    <circle cx="19.2" cy="20.8" r="1.2" fill="white" opacity="0.7"/>
+  </g>
+  
+  <!-- White Text for Dark Backgrounds -->
+  <text x="36" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">EduManage</text>
+</svg>

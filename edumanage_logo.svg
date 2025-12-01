@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EduManage SVG Logo
+     - Scalable vector logo suitable for web / mobile / favicon (export to PNG at needed sizes)
+     - Colors: primary teal (#0EA5A4) and slate (#0F172A)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">EduManage logo</title>
+  <desc id="desc">Stylized shield + book icon with text EduManage.</desc>
+
+  <!-- Background (transparent) -->
+
+  <!-- Icon group: shield + open book -->
+  <g id="icon" transform="translate(40,40)">
+    <!-- Shield base -->
+    <path d="M120 0 L240 40 L240 160 C240 220 180 300 120 360 C60 300 0 220 0 160 L0 40 Z" fill="#0F172A" opacity="0.95" />
+    <!-- Inner shield overlay (teal) -->
+    <path d="M120 18 L228 52 L228 152 C228 204 176 268 120 322 C64 268 12 204 12 152 L12 52 Z" fill="#0EA5A4" opacity="0.98" />
+
+    <!-- Open Book (white pages) -->
+    <g transform="translate(40,70) scale(0.8)">
+      <path d="M0 40 C40 10 80 10 120 40 L120 140 C80 110 40 110 0 140 Z" fill="#ffffff" />
+      <path d="M120 40 C160 10 200 10 240 40 L240 140 C200 110 160 110 120 140 Z" fill="#ffffff" />
+      <!-- Page lines -->
+      <path d="M20 70 L100 70" stroke="#E6EEF6" stroke-width="3" stroke-linecap="round" />
+      <path d="M20 90 L100 90" stroke="#E6EEF6" stroke-width="3" stroke-linecap="round" />
+      <path d="M140 70 L220 70" stroke="#E6EEF6" stroke-width="3" stroke-linecap="round" />
+      <path d="M140 90 L220 90" stroke="#E6EEF6" stroke-width="3" stroke-linecap="round" />
+    </g>
+
+    <!-- Small accent circle (dot) -->
+    <circle cx="240" cy="20" r="6" fill="#ffffff" opacity="0.9" />
+  </g>
+
+  <!-- Wordmark -->
+  <g id="wordmark" transform="translate(360,130)">
+    <text x="0" y="0" font-family="Inter, Roboto, Arial, sans-serif" font-size="72" font-weight="700" fill="#0F172A">Edu</text>
+    <text x="150" y="0" font-family="Inter, Roboto, Arial, sans-serif" font-size="72" font-weight="700" fill="#0EA5A4">Manage</text>
+    <text x="0" y="48" font-family="Inter, Roboto, Arial, sans-serif" font-size="18" font-weight="500" fill="#334155">Student Record Management System</text>
+  </g>
+
+  <!-- Fallback rectangle for smaller renders (optional) -->
+  <rect x="0" y="0" width="1200" height="360" fill="transparent" />
+</svg>
