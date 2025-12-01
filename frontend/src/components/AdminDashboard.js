@@ -561,13 +561,28 @@ const AdminDashboard = () => {
                         </div>
                         <div className="form-group">
                           <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#94a3b8', marginBottom: '4px' }}>Department</label>
-                          <input
-                            type="text"
-                            required
+                          <select
                             className="form-input"
                             value={editStudentForm.department || ''}
                             onChange={(e) => setEditStudentForm({...editStudentForm, department: e.target.value})}
-                          />
+                            required
+                          >
+                            <option value="">Select Department</option>
+                            <option value="Artificial Intelligence & Data Science">Artificial Intelligence & Data Science</option>
+                            <option value="Artificial Intelligence & Machine Learning">Artificial Intelligence & Machine Learning</option>
+                            <option value="Biotechnology">Biotechnology</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+                            <option value="Computer & Communication Engineering">Computer & Communication Engineering</option>
+                            <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+                            <option value="Computer Science & Engineering (Cyber Security)">Computer Science & Engineering (Cyber Security)</option>
+                            <option value="Electrical & Electronics Engineering">Electrical & Electronics Engineering</option>
+                            <option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+                            <option value="Electronics Engineering (VLSI Design & Technology)">Electronics Engineering (VLSI Design & Technology)</option>
+                            <option value="Electronics & Communication (Advanced Communication Technology)">Electronics & Communication (Advanced Communication Technology)</option>
+                            <option value="Information Science & Engineering">Information Science & Engineering</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Robotics & Artificial Intelligence">Robotics & Artificial Intelligence</option>
+                          </select>
                         </div>
                         <div className="form-group">
                           <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#94a3b8', marginBottom: '4px' }}>Current Semester</label>

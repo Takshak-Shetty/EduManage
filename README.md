@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./logo/edumanage-horizontal.svg" alt="EduManage Logo" width="300">
+  <img src="./logo/edumanage-dark.svg" alt="EduManage Logo" width="300">
 </div>
 
 <div align="center">
